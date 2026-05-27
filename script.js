@@ -1,19 +1,11 @@
-async function updateHarga() {
-    try {
-        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd');
-        const data = await response.json();
-        
-        let html = `
-            <p>Bitcoin: $${data.bitcoin.usd}</p>
-            <p>Ethereum: $${data.ethereum.usd}</p>
-            <p>Tether: $${data.tether.usd}</p>
-        `;
-        document.getElementById("crypto-data").innerHTML = html;
-    } catch (error) {
-        document.getElementById("crypto-data").innerText = "Gagal mengambil data.";
-    }
+let userPower = 100; // dalam Th/s
+let networkPower = 50000; // total kekuatan seluruh pengguna
+let blockReward = 0.5; // jumlah koin yang dibagikan per blok
+
+function calculateEarnings() {
+    // Rumus dasar proporsional
+    let myEarnings = (userPower / networkPower) * blockReward;
+    return myEarnings;
 }
 
-// Update harga setiap 30 detik
-setInterval(updateHarga, 30000);
-updateHarga();
+console.log("Estimasi pendapatan koin Anda:", calculateEarnings());
