@@ -1,0 +1,4 @@
+body { font-family: sans-serif; text-align: center; background: #f4f4f9; }
+.container { max-width: 400px; margin: 50px auto; background: white; padding: 20px; border-radius: 10px; }
+.btn { display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+#crypto-data { font-size: 1.5em; font-weight: bold; color: #333; }
